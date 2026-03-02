@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+</head>
+<body>
+<a href="{% url 'recipes:list' %}">Retour</a>
+<h1>{{ recipe.title }}</h1>
+
+<p>
+    Catégorie : {{ category_label }} |
+    Temps : {{ recipe.prep_time }} min |
+    Portions : {{ recipe.servings }} |
+    Difficulté : {{ recipe.difficulty|capfirst }}
+</p>
+
+<p>Note : {{ recipe.rating_avg }} ({{ recipe.rating_count }} votes)</p>
+
+<h2>Ingrédients</h2>
+<ul>
+    {% for i in recipe.ingredients %}
+    <li>{{ i }}</li>
+    {% endfor %}
+</ul>
+
+<h2>Étapes</h2>
+<ol>
+    {% for s in recipe.steps %}
+    <li>{{ s }}</li>
+    {% endfor %}
+</ol>
+
+<h2>Ustensiles</h2>
+<ul>
+    {% for u in recipe.utensils %}
+    <li>{{ u }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

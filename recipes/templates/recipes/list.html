@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+
+<form method="get">
+    <input type="text" name="q" placeholder="Rechercher par nom..." value="{{ query }}">
+    <select name="cat">
+        <option value="">Toutes catégories</option>
+        {% for key, label in categories.items %}
+        <option value="{{ key }}" {% if selected_cat == key %}selected{% endif %}>
+            {{ label }}
+        </option>
+        {% endfor %}
+    </select>
+    <button type="submit">Rechercher</button>
+    <a href="{% url 'recipes:list' %}">Réinitialiser</a>
+</form>
+
+<p>{{ count }} recette(s)</p>
+
+<ul>
+    {% for r in recipes %}
+    <li>
+        <strong>{{ r.title }}</strong>
+        — {{ r.category_label }}
+        — {{ r.prep_time }} min
+        — <a href="{% url 'recipes:detail' r.id %}">Voir</a>
+    </li>
+    {% empty %}
+    <li>Aucune recette trouvée.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

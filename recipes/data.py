@@ -1,0 +1,76 @@
+RECIPES = [
+    {
+        "id": 1,
+        "title": "Salade fraîcheur",
+        "category": "entree",
+        "prep_time": 15,
+        "image": "img/salade.jpg",
+        "servings": 2,
+        "difficulty": "facile",
+        "ingredients": ["Tomates", "Concombre", "Feta", "Huile d'olive", "Citron"],
+        "steps": [
+            "Laver et couper les légumes.",
+            "Mélanger avec la feta.",
+            "Assaisonner et servir frais."
+        ],
+        "utensils": ["Couteau", "Saladier"],
+        "rating_avg": 4.2,
+        "rating_count": 12,
+    },
+    {
+        "id": 2,
+        "title": "Pâtes carbonara",
+        "category": "plat",
+        "prep_time": 25,
+        "image": "img/carbonara.jpg",
+        "servings": 2,
+        "difficulty": "moyen",
+        "ingredients": ["Pâtes", "Lardons", "Crème", "Oeufs", "Parmesan", "Poivre"],
+        "steps": [
+            "Cuire les pâtes.",
+            "Faire revenir les lardons.",
+            "Mélanger hors feu avec oeufs/crème/parmesan.",
+            "Poivrer et servir."
+        ],
+        "utensils": ["Casserole", "Poêle"],
+        "rating_avg": 4.6,
+        "rating_count": 34,
+    },
+    {
+        "id": 3,
+        "title": "Tiramisu",
+        "category": "dessert",
+        "prep_time": 30,
+        "image": "img/tiramisu.jpg",
+        "servings": 6,
+        "difficulty": "moyen",
+        "ingredients": ["Mascarpone", "Oeufs", "Sucre", "Café", "Biscuits", "Cacao"],
+        "steps": [
+            "Préparer la crème mascarpone.",
+            "Tremper les biscuits dans le café.",
+            "Monter en couches, saupoudrer cacao.",
+            "Réserver au frais."
+        ],
+        "utensils": ["Saladier", "Fouet"],
+        "rating_avg": 4.8,
+        "rating_count": 51,
+    },
+    {
+        "id": 4,
+        "title": "Mojito",
+        "category": "cocktail",
+        "prep_time": 10,
+        "image": "img/mojito.jpg",
+        "servings": 1,
+        "difficulty": "facile",
+        "ingredients": ["Menthe", "Citron vert", "Sucre", "Eau gazeuse", "Glace"],
+        "steps": [
+            "Écraser menthe + citron + sucre.",
+            "Ajouter glace et eau gazeuse.",
+            "Mélanger doucement."
+        ],
+        "utensils": ["Verre", "Pilon"],
+        "rating_avg": 4.1,
+        "rating_count": 9,
+    },
+]
