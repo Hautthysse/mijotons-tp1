@@ -6,37 +6,49 @@
     <title>{{ title }}</title>
 </head>
 <body>
+
 <a href="{% url 'recipes:list' %}">Retour</a>
+
 <h1>{{ recipe.title }}</h1>
 
 <p>
-    Catégorie : {{ category_label }} |
+    Catégorie : {{ recipe.category_label }} |
     Temps : {{ recipe.prep_time }} min |
     Portions : {{ recipe.servings }} |
     Difficulté : {{ recipe.difficulty|capfirst }}
 </p>
 
-<p>Note : {{ recipe.rating_avg }} ({{ recipe.rating_count }} votes)</p>
-
 <h2>Ingrédients</h2>
 <ul>
-    {% for i in recipe.ingredients %}
+    {% for i in recipe.ingredients_list %}
     <li>{{ i }}</li>
+    {% empty %}
+    <li>Aucun ingrédient</li>
     {% endfor %}
 </ul>
 
 <h2>Étapes</h2>
 <ol>
-    {% for s in recipe.steps %}
+    {% for s in recipe.steps_list %}
     <li>{{ s }}</li>
+    {% empty %}
+    <li>Aucune étape</li>
     {% endfor %}
 </ol>
 
 <h2>Ustensiles</h2>
 <ul>
-    {% for u in recipe.utensils %}
+    {% for u in recipe.utensils_list %}
     <li>{{ u }}</li>
+    {% empty %}
+    <li>Aucun ustensile</li>
     {% endfor %}
 </ul>
+<hr>
+<p>
+    <a href="{% url 'recipes:edit' recipe.id %}">Modifier</a> |
+    <a href="{% url 'recipes:delete' recipe.id %}">Supprimer</a>
+</p>
+
 </body>
 </html>

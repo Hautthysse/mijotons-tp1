@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+</head>
+<body>
+<p><a href="{% url 'recipes:list' %}">Retour à la liste</a></p>
+<h1>{{ title }}</h1>
+
+<p>
+    Voulez-vous vraiment supprimer
+    <strong>{% if recipe %}{{ recipe.title }}{% else %}cette recette (ID {{ recipe_id }}){% endif %}</strong> ?
+</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+    <a href="{% url 'recipes:detail' recipe_id %}">Annuler</a>
+</form>
+</body>
+</html>

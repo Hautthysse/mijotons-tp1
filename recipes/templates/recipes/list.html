@@ -6,7 +6,14 @@
     <title>{{ title }}</title>
 </head>
 <body>
+
 <h1>{{ title }}</h1>
+{% if request.session.access_token %}
+<p><a href="{% url 'recipes:oidc_logout' %}">Déconnexion</a></p>
+{% else %}
+<p><a href="{% url 'recipes:oidc_login' %}">Connexion</a></p>
+{% endif %}
+<p><a href="{% url 'recipes:add' %}">Ajouter une recette</a></p>
 
 <form method="get">
     <input type="text" name="q" placeholder="Rechercher par nom..." value="{{ query }}">
@@ -36,5 +43,6 @@
     <li>Aucune recette trouvée.</li>
     {% endfor %}
 </ul>
+
 </body>
 </html>

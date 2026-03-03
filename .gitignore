@@ -22,3 +22,23 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Secrets / env
+.env
+*.env
+.env.*
+keycloak.json
+
+# Python / venv
+.venv/
+venv/
+djangoEnv/
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+
+# Node
+node_modules/
+npm-debug.log*
